@@ -191,7 +191,7 @@ def main():
     os.environ['PYTHONPATH'] = os.path.join(scriptPath, '..', 'lib', 'python') + os.pathsep + os.environ['PYTHONPATH']
 
     # set the template path
-    os.environ['TEMPLATEDIR'] = os.path.join(os.environ['MCRIBS_HOME'], 'lib', 'MCRIBSTemplates')
+    os.environ['TEMPLATEDIR'] = os.path.join('/templates')
 
     if not options.hemi is None:
         Hemis = options.hemi
