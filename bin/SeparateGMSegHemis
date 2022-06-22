@@ -26,6 +26,8 @@ TissueSegDir = os.environ['TISSUESEGDIR']
 T2NII = nibabel.load(os.path.join(TissueSegDir, subjID, subjID + "_t2w_restore_brain_dn.nii.gz"))
 T2IMG = T2NII.get_fdata()
 
+os.environ['TEMPLATEREGSUFFIX'] = "skullstrip_reg"
+
 LabelFusionNII = nibabel.load(os.path.join(TissueSegDir, subjID, subjID + "_majority_dkt_" + os.environ['TEMPLATEREGSUFFIX'] + ".nii.gz"))
 LabelFusionIMG = numpy.int16(LabelFusionNII.get_fdata())
 
